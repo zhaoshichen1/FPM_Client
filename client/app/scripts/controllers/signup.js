@@ -8,7 +8,7 @@
  * Controller of the clientApp
  */
 angular.module('clientApp').
-  controller('SignupCtrl', function ($scope, $http, $log, alertService, $location) {
+  controller('SignupCtrl', function ($scope, $http, $log, alertService, $location, userService) {
 
       $scope.whileSubmit = function() {
 
