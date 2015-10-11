@@ -1,0 +1,33 @@
+<div class="panel panel-default" ng-show="post">
+ <div class="panel-body">
+   <h4>
+     {{ post.subject }}
+   </h4>
+   <p>
+     {{ post.content }}
+   </p>
+ </div>
+
+  <div class="panel-footer">
+    <p>
+      <a ng-href="/#/viewpost/{{ post.id }}">Comments</a>
+      <span class="badge">{{ post.commentCount }}</span>
+      |
+      Active? <span class="badge">{{ post.is_active }}</span>
+
+      <span ng-show="post.is_active" ng-controller="ClosepostCtrl">
+          <a ng-click="closePost()">| Close this topic</a>
+      </span>
+    </p>
+    <p>
+      Posted by:  <span class="badge">
+      {{ post.author.codename }}</span>  |
+      Posted at <span class="date" style="font-style:italic;color:blueviolet">{{ post.createTime }}</span>
+    </p>
+    <p>
+      Closed by:  <span class="badge">
+      {{ post.closer.codename }}</span>  |
+      Closed at <span class="date" style="font-style:italic;color:blueviolet">{{ post.closeTime }}</span>
+    </p>
+  </div>
+</div>

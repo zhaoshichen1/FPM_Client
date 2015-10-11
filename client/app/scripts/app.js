@@ -46,6 +46,10 @@ angular
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl',
       })
+      .when('/viewpost/:postId', {
+        templateUrl: 'views/viewpost.html',
+        controller: 'ViewpostCtrl',
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -38,10 +38,10 @@
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="MenuCtrl">
 
-            <ul class="nav navbar-nav" ng-hide="isLoggedIn">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/signup">Join US!</a></li>
-              <li><a ng-href="#/login">Log IN !</a></li>
+            <ul class="nav navbar-nav" ng-hide="isLoggedIn" id="menu_buttons">
+              <li class="active" id="home"><a href="#/" onclick="active_click('home')">Home</a></li>
+              <li id="join"><a ng-href="#/signup" onclick="active_click('join')">Join US!</a></li>
+              <li id="login"><a ng-href="#/login" onclick="active_click('login')">Log IN !</a></li>
             </ul>
 
             <div class="btn-group pull-right acc-buttion" ng-show="isLoggedIn">
@@ -98,6 +98,17 @@
        ga('send', 'pageview');
     </script>
 
+    <!-- Active Transfer between different tabs on the top -->
+    <script>
+      function active_click(id){
+        var n = document.getElementById('menu_buttons').childNodes;
+        for(i=0;i<n.length;i++)
+          n[i].className = '';
+
+        document.getElementById(id).className = 'active';
+      }
+    </script>
+
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -124,6 +135,8 @@
         <script src="scripts/controllers/menu.js"></script>
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/controllers/addpost.js"></script>
+        <script src="scripts/controllers/viewpost.js"></script>
+        <script src="scripts/controllers/closepost.js"></script>
         <!-- endbuild -->
 </body>
 </html>

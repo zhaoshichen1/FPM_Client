@@ -30,7 +30,6 @@ angular.module('clientApp')
     $scope.$watch('user.username', function(newVal){
 
       console.log('here, newVal is '+newVal);
-      console.log('so isLoggedIn is '+$scope.isLoggedIn);
 
       if (newVal === ''){
         $scope.isLoggedIn = false;
@@ -39,5 +38,7 @@ angular.module('clientApp')
         $scope.isLoggedIn = true;
         $scope.username = newVal;
       }
+
+      console.log('so isLoggedIn is '+$scope.isLoggedIn);
     })
   });
