@@ -55,6 +55,13 @@ angular.module('clientApp')
           $scope.content = '';
           alertService.add('success',data.success.message);
 
+          debug.addPostMessage = data;
+
+          if(data.hasOwnProperty('success')){
+            $location.path(
+              '/dashboard'
+            )
+          }
         });
 
   }});

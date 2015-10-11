@@ -36,7 +36,7 @@
           </div>
 
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="MenuCtrl">
+          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="MenuCtrl" style="margin-bottom:2%">
 
             <ul class="nav navbar-nav" ng-hide="isLoggedIn" id="menu_buttons">
               <li class="active" id="home"><a href="#/" onclick="active_click('home')">Home</a></li>
@@ -59,6 +59,9 @@
                 </li>
                 <li>
                   <a ng-href="/#/addpost">Add Post</a>
+                </li>
+                <li>
+                  <a href="#/" onclick="active_click('home')">View all Posts in the pool</a>
                 </li>
                 <li class="divider"></li>
                 <li>

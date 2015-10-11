@@ -29,4 +29,40 @@ angular.module('clientApp')
 
     $scope.viewPost();
 
+    $scope.addComment = function(){
+      var payload = {
+        postId : $scope.postId,
+        comment: $scope.comment
+      }
+
+      $http.post('/app/comment', payload).error(function(data, status){
+        if ( status === 400 ){
+          angular.forEach(data, function(value, key){
+            if ( key === 'comment' ){
+              alertService.add('danger', key + ' : '+ value);
+            }
+            else
+              alertService.add('danger', value.message);
+          })
+        }
+
+        // not logged in
+        else if(status === 401){
+          $location.path('/login');
+        }
+
+        else if(status === 500){
+          alertService.add('danger', 'Internal Server Error!!');
+        }
+
+        else
+          alertService.add('danger', data);
+
+      }).success(function(data){
+        alertService.add('success', data.success.message);
+        $scope.comment = '';
+        $scope.viewPost();
+      })
+    }
+
   });

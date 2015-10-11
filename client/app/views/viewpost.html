@@ -24,10 +24,43 @@
       {{ post.author.codename }}</span>  |
       Posted at <span class="date" style="font-style:italic;color:blueviolet">{{ post.createTime }}</span>
     </p>
-    <p>
+    <p ng-hide="post.is_active">
       Closed by:  <span class="badge">
       {{ post.closer.codename }}</span>  |
       Closed at <span class="date" style="font-style:italic;color:blueviolet">{{ post.closeTime }}</span>
     </p>
   </div>
+
+  <h4 style="margin-left:1%" ng-show="post.commentCount > 0">
+    Comments
+  </h4>
+  <div class="well" ng-repeat="comment in post.comments" style="margin-top:1%">
+    {{ comment.content }}
+    <p>
+    <span class="label label-default">
+      By: {{ comment.author.codename }} at {{ comment.postTime }}
+    </span>
+    </p>
+  </div>
+
+  <div ng-hide="user.username || !post">
+    <h4>
+      <a ng-href="/#/login">
+        Login
+      </a>
+      to comment
+    </h4>
+  </div>
+
+  <form name="addCommentForm" ng-submit="addComment()" ng-show="user.username && post.is_active" novalidate>
+    <div>
+      <h4 style="margin-left:2%">
+        Add Comment
+      </h4>
+    </div>
+    <div>
+      <textarea name="comment" class="form-control" id="comment" placeholder="Comment ..." ng-model="comment"/>
+    </div>
+    <button type="submit" class="btn btn-primay" style="margin-bottom:1%;margin-left:88%;margin-top:1%">Submit</button>
+  </form>
 </div>

@@ -29,7 +29,7 @@ angular.module('clientApp')
 
           alertService.add('success','The Post is closed by '+userService.username);
           $location.path(
-            '/viewpost/' + $scope.postId
+            '/dashboard'
           )
         })
 
