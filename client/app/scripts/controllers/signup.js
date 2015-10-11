@@ -46,6 +46,9 @@ angular.module('clientApp').
             console.log(data);
             debug = data;
 
+            // fix the bug that after the registration the status is abnormal
+            userService.username = payload.codename;
+
             if(data.hasOwnProperty('success')){
               $location.path(
                 '/dashboard'

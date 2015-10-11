@@ -1,0 +1,25 @@
+<form name="signupForm" ng-submit="whileSubmit()" novalidate>
+  <div>
+    <label for="codename">
+        Codename
+    </label>
+    <input name="codename" class="form-control" type="text" id="codename" placeholder="Codename: e.g. SZO for Shichen ZHAO" ng-model="codename"/>
+  </div>
+  <br>
+    <label>
+        Orgnization
+    </label>
+    <input name="org" class="form-control" type="radio" id="crm-zas" ng-model="org" value="CS-CRM-ZAS"/>CS-CRM-ZAS
+    <input name="org" class="form-control" type="radio" id="crm-decathlon" ng-model="org" value="CS-CRM-Decathlon"/>CS-CRM-Decathlon
+    <input name="org" class="form-control" type="radio" id="comm" ng-model="org" value="Communication"/>Communication
+  </div>
+  <div>
+    <label for="password">
+        Password
+    </label>
+    <input name="password" class="form-control" type="password" id="password" placeholder="Password" ng-model="password"/>
+    <button type="submit" class="btn btn-primary">
+        Join us!
+    </button>
+  </div>
+</form>
