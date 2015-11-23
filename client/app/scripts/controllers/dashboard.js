@@ -5,7 +5,7 @@
  * @name alertsApp.controller:DashboardCtrl
  * @description
  * # DashboardCtrl
- * Controller of the alertsApp T
+ * Controller of the alertsApp TT
  */
 angular.module('clientApp')
   .controller('DashboardCtrl', function ($scope, $log, $http, alertService, $location) {
