@@ -5,7 +5,11 @@
     Add a post now!
   </a>
 </div>
-<div class="panel panel-default" ng-repeat="post in posts">
+
+<button class="btn btn-primay" style="margin-bottom:1%;margin-top:1%">Show all the posts</button>
+<button class="btn btn-primay" style="margin-bottom:1%;margin-top:1%">Show only the active posts</button>
+
+<div class="panel panel-default" ng-repeat="post in posts" style="margin-top:1%">
   <div class="panel-body">
     <a ng-href="/#/viewpost/{{ post.id }}">
       {{ post.subject }}
