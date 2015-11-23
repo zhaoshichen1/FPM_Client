@@ -21,6 +21,6 @@ angular.module('clientApp')
         })
     }
 
-    $scope.loadPosts();
+    $scope.loadPosts
 
   });
